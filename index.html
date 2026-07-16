@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+JSG Members Directory
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="topbar">
+
+<img
+src="assets/logo.png"
+class="logo">
+
+<div>
+
+<h1>
+Sangini JSG Main Bhilwara
+</h1>
+
+<p>
+Members Directory
+</p>
+
+</div>
+
+</header>
+
+<<section class="search-section">
+
+<input
+
+id="search"
+
+type="text"
+
+placeholder="🔍 Search Member..."
+
+>
+
+
+<div id="lastUpdated">
+
+</div>
+
+</section>
+
+<div class="filter-bar">
+
+
+<button onclick="sortAZ()">
+🔤 A-Z
+</button>
+
+
+<button onclick="sortZA()">
+🔤 Z-A
+</button>
+
+
+<button onclick="sortBirthday()">
+🎂 Birthday
+</button>
+
+
+<button onclick="sortAnniversary()">
+💍 Anniversary
+</button>
+
+
+<button onclick="bloodFilter()">
+🩸 Blood
+</button>
+
+
+</div>
+
+
+
+<section
+
+id="memberList"
+
+class="member-list">
+
+</section>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/app.js"></script>
+
+
+<!-- MEMBER PROFILE MODAL -->
+
+<div id="memberModal" class="modal">
+
+<div class="profile-card">
+
+<button class="close-btn" onclick="closeMember()">
+✕
+</button>
+
+
+<div class="profile-images">
+
+<img id="profilePhoto"
+class="big-profile-photo">
+
+
+<img id="couplePhoto"
+class="couple-photo">
+
+</div>
+
+
+<h2 id="profileName"></h2>
+
+<div class="member-id-box">
+<span id="profileId"></span>
+</div>
+
+
+<div class="profile-actions">
+
+<a id="callBtn" class="call-btn">
+☎ Call
+</a>
+
+
+<a id="whatsappBtn" class="whatsapp-btn">
+💬 WhatsApp
+</a>
+
+</div>
+
+
+<div class="details">
+
+
+<p>
+📍 City:
+<span id="profileCity"></span>
+</p>
+
+
+<p>
+🎂 DOB:
+<span id="profileDob"></span>
+</p>
+
+
+<p>
+Age:
+<span id="profileAge"></span>
+</p>
+
+
+<p>
+🩸 Blood Group:
+<span id="profileBlood"></span>
+</p>
+
+
+<hr>
+
+
+<h3>Spouse Details</h3>
+
+<p id="profileSpouse"></p>
+
+
+<hr>
+
+
+<p>
+👧 Children:
+<span id="profileChildren"></span>
+</p>
+
+
+<p>
+💍 Anniversary:
+<span id="profileAnniversary"></span>
+</p>
+
+
+<hr>
+
+
+<p>
+🏠 Address:
+<span id="profileAddress"></span>
+</p>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+</body>
+
+</html>
