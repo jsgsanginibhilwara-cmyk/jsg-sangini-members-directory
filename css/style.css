@@ -462,3 +462,11 @@ font-size:12px;
 transform:scale(.95);
 
 }
+
+.member-count{
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+    color:#1e3a8a;
+    margin:6px 0;
+}

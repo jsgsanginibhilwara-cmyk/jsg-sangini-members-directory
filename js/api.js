@@ -32,7 +32,8 @@ async function loadMembers(){
         renderMembers(members);
 
     }
-
+document.getElementById("memberCount").innerHTML =
+    "👥 Registered Members: " + members.length;
 
 
     // 2. FETCH LATEST DATA
@@ -96,3 +97,4 @@ new Date().toLocaleString()
 
 
 }
+
