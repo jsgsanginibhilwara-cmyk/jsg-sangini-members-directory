@@ -12,14 +12,51 @@ window.onload = async function(){
     await loadMembers();
 
     setupSearch();
+    
 
     showLastUpdated();
 
 };
 
+
+// ======================================
+// AUTO REFRESH EVERY 30 SECONDS
+// ======================================
+
+setInterval(async function () {
+
+    console.log("Checking for latest data...");
+
+    await loadMembers();
+
+    showLastUpdated();
+
+}, 30000);
+
+
+// ======================================
+// REFRESH WHEN USER RETURNS TO APP
+// ======================================
+
+document.addEventListener("visibilitychange", async function () {
+
+    if (!document.hidden) {
+
+        console.log("App Active - Refreshing");
+
+        await loadMembers();
+
+        showLastUpdated();
+
+    }
+
+});
+
 // =====================================
 
 function setupSearch(){
+
+    console.log("Members:", members.length);
 
     const search=document.getElementById("search");
 
@@ -29,17 +66,29 @@ function setupSearch(){
 
         const filtered=members.filter(member=>{
 
-            return(
+           return (
 
-                member.fullName.toLowerCase().includes(keyword)
+    (
+        ((member.firstName || "") + " " + (member.surname || ""))
+        .toLowerCase()
+        .includes(keyword)
+    )
 
-                ||
+    ||
 
-                member.memberId.toLowerCase().includes(keyword)
+    (
+        (member.memberId || "")
+        .toLowerCase()
+        .includes(keyword)
+    )
 
-                ||
+    ||
 
-                member.whatsapp.includes(keyword)
+    (
+        String(member.whatsapp || "")
+        .includes(keyword)
+    )
+
 
             );
 
